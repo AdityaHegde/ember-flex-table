@@ -1,7 +1,14 @@
 import Ember from 'ember';
 import Application from '../../app';
-import Router from '../../router';
 import config from '../../config/environment';
+/* jshint ignore:start */
+import initTable from "./initTable";
+import arrayOperation from "./arrayOperation";
+import createArray from "./createArray";
+import verifyCheckboxes from "./verifyCheckboxes";
+import clickFormElement from "./clickFormElement";
+import fillFormElement from "./fillFormElement";
+/* jshint ignore:end */
 
 export default function startApp(attrs) {
   var application;

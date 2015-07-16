@@ -1,0 +1,14 @@
+{
+  "name": "ember-flex-table",
+  "description": "A flexible ember addon for tables with sort, search and filter support.",
+  "version": "0.0.1",
+  "options": {
+    "paths": [
+      "addon"
+    ],
+    "exclude": "vendor",
+    "outdir": "docs",
+    "themedir": "node_modules/yuidoc-bootstrap-theme",
+    "helpers": ["node_modules/yuidoc-bootstrap-theme/helpers/helpers.js"]
+  }
+}

@@ -1,0 +1,16 @@
+<div class="head-inner">
+  <table class="table {{columnDataGroup.table.additionalTableClass}}">
+    <thead class={{columnDataGroup.table.additionalTableHeadClass}}>
+      <tr class={{columnDataGroup.table.additionalTableHeadRowClass}}>
+        {{#each columns key="@index" as |columnData|}}
+          {{component columnData.table.tableHeadComponent columnData=columnData record=record}}
+        {{/each}}
+      </tr>
+    </thead>
+    <tbody class={{columnDataGroup.table.additionalTableBodyClass}}>
+      {{#each record key="@index" as |rowRecord|}}
+        {{component columnDataGroup.table.tableRowComponent record=rowRecord columns=columns columnDataGroup=columnDataGroup}}
+      {{/each}}
+    </tbody>
+  </table>
+</div>
