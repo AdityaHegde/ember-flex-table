@@ -13,8 +13,10 @@ moduleForComponent("ember-flex-table", "Ember Flex Table Head Tests", {
   },
 
   needs : [
-    "view:emberFlexTableRow",
     "view:emberFlexTableHead",
+    "view:emberFlexTableBody",
+    "view:emberFlexTableRow",
+    "view:emberFlexTableHeadCell",
     "view:emberFlexTableCell",
     "view:emberFlexTableCheckboxCell",
     "view:emberFlexTableMappedValueCell",

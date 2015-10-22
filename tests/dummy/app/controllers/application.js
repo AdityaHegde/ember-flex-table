@@ -5,36 +5,68 @@ import EmberFlexTable from "ember-flex-table";
 /* jshint ignore:end */
 
 export default Ember.Controller.extend({
-  columnDataGroup : EmberColumnData.ColumnDataGroup.create({
+  columnData : EmberColumnData.ColumnData.create({
     name : "tableTest",
-    columns : [{
-      name : "vara",
-      label : "VarA",
+    table : {
+      moduleType : "table",
+      tagName : "table",
+      additionalClassNames : "table table-striped table-hover",
+    },
+    childrenColumnData : [{
+      name : "tableHead",
       table : {
-        sortable : true,
-        additionalTableHeadClass : "col-md-5 table-head-vara",
-        additionalTableCellClass : "table-cell-vara",
+        moduleType : "tableHead",
+        tagName : "thead",
       },
+      childrenColumnData : [{
+        name : "vara",
+        label : "VarA",
+        table : {
+          sortable : true,
+          additionalClassNames : "col-md-5 table-head-vara",
+          moduleType : "tableHeadCell",
+          tagName : "th",
+        },
+      }, {
+        name : "varb",
+        label : "VarB",
+        table : {
+          sortable : true,
+          additionalClassNames : "col-md-5 table-head-varb",
+          moduleType : "tableHeadCell",
+          tagName : "th",
+        },
+      }],
     }, {
-      name : "varb",
-      label : "VarB",
+      name : "tableBody",
       table : {
-        tableCellType : "mapped",
-        options : [
-          {value : "v0", label : "l0"},
-          {value : "v1", label : "l1"},
-          {value : "v2", label : "l2"},
-        ],
-        sortable : true,
-        additionalTableHeadClass : "col-md-5 table-head-varb",
-        additionalTableCellClass : "table-cell-varb",
+        moduleType : "tableBody",
+        tagName : "tbody",
+      },
+      childColumnData : {
+        name : "tableRow",
+        table : {
+          moduleType : "tableRow",
+          tagName : "tr",
+        },
+        childrenColumnData : [{
+          name : "vara",
+          label : "VarA",
+          table : {
+            additionalClassNames : "col-md-5 table-cell-vara",
+            moduleType : "tableCell",
+            tagName : "td",
+          },
+        }, {
+          name : "varb",
+          label : "VarB",
+          table : {
+            additionalClassNames : "col-md-5 table-cell-varb",
+            moduleType : "tableCell",
+            tagName : "td",
+          },
+        }],
       },
     }],
-    table : {
-      additionalTableClass : "table-striped table-hover",
-      additionalTableHeadClass : "table-head-class",
-      additionalTableBodyClass : "table-body-class",
-      additionalTableRowClass : "table-row-class",
-    },
   }),
 });

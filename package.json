@@ -40,10 +40,11 @@
   "dependencies": {
     "ember-cli-babel": "^5.0.0",
     "ember-cli-htmlbars": "0.7.9",
-    "ember-array-modifier": "^1.0.0",
-    "ember-object-utils": "^1.0.0",
-    "ember-timer-utils": "^1.0.0",
-    "ember-column-data": "^1.0.0"
+    "ember-array-modifier": "*",
+    "ember-object-utils": "*",
+    "ember-timer-utils": "*",
+    "ember-flex-modules": "*",
+    "ember-column-data": "*"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

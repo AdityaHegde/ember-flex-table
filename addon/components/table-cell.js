@@ -1,19 +1,12 @@
 import Ember from "ember";
-import layout from "../templates/components/table-cell";
-import EmberColumnData from "ember-column-data";
+//import EmberColumnData from "ember-column-data";
+import EmberFlexModules from "ember-flex-modules";
 
-export default Ember.Component.extend(EmberColumnData.ColumnDataValueMixin, {
-  layout : layout,
-
+export default EmberFlexModules.BaseText.extend({
   tagName : "td",
-
-  columnData : null,
-  columnDataGroup : null,
-  record : null,
 
   attributeBindings : ['colName:data-column-name'],
   colName : Ember.computed.alias("columnData.name"),
-  classNameBindings : ["columnData.table.additionalTableCellClass"],
 
   mouseInRow : false,
   mouseInCell : false,

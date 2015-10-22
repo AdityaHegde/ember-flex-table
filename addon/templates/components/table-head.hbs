@@ -1,10 +1,5 @@
-<span class={{if columnData.table.sortable "btn-link"}} {{action "click_label"}}>
-  {{#if columnData.table.tableColumnName}}
-    {{columnData.table.tableColumnName}}
-  {{else}}
-    {{columnData.label}}
-  {{/if}}
-</span>
-{{#if isSortedOn}}
-  <span class="glyphicon glyphicon-chevron-{{if sortModifier.order "up" "down"}}"></span>
-{{/if}}
+<tr class={{columnDataGroup.table.additionalTableHeadRowClass}}>
+  {{#each modulesColumnData key="@index" as |moduleColumnData|}}
+    {{component moduleColumnData.componentName columnData=moduleColumnData.parentObj moduleColumnData=moduleColumnData record=childRecord tagName=moduleColumnData.tagName}}
+  {{/each}}
+</tr>

@@ -1,5 +1,8 @@
 <div class="head-inner">
   <table class="table {{columnDataGroup.table.additionalTableClass}}">
+    {{#each modulesColumnData key="@index" as |moduleColumnData|}}
+      {{component moduleColumnData.componentName columnData=moduleColumnData.parentObj moduleColumnData=moduleColumnData record=childRecord tagName=moduleColumnData.tagName}}
+    {{/each}}
     <thead class={{columnDataGroup.table.additionalTableHeadClass}}>
       <tr class={{columnDataGroup.table.additionalTableHeadRowClass}}>
         {{#each columns key="@index" as |columnData|}}

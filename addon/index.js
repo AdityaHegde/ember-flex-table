@@ -1,10 +1,12 @@
 import Ember from "ember";
-import TableColumnData from "./column-data/index";
+import TableColumnData from "./TableColumnData";
+import components from "./components/index";
 
 var
 EmberFlexTable = Ember.Namespace.create(),
-tableModules = [TableColumnData];
+tableModules = [components];
 window.EmberFlexTable = EmberFlexTable;
+EmberFlexTable.TableColumnData = TableColumnData;
 
 for(var i = 0; i < tableModules.length; i++) {
   for(var k in tableModules[i]) {

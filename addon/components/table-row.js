@@ -1,15 +1,11 @@
-import Ember from "ember";
+//import Ember from "ember";
 import layout from "../templates/components/table-row";
+import EmberFlexModules from "ember-flex-modules";
 
-export default Ember.Component.extend({
+export default EmberFlexModules.MultiComponent.extend({
   layout : layout,
 
   tagName : "tr",
-  columns : null,
-  columnDataGroup : null,
-  record : null,
-
-  classNameBindings : ["columnDataGroup.table.additionalTableRowClass"],
 
   mouseInRow : false,
   mouseEnter : function() {
